@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "Wsly",
+      "email": "whitenessly@gmail.com",
+      "password": "23212332"
+    },
+    {
+      "id": "2",
+      "username": "Alice",
+      "email": "alice@gmail.com",
+      "password": "23212332"
+    },
+    {
+      "id": "1752479142644",
+      "username": "asd",
+      "email": "asd",
+      "password": "asdasdasd"
+    },
+    {
+      "id": "1752482981764",
+      "username": "asdsdk",
+      "email": "wh@gmail.com",
+      "password": "asdasdasd"
+    }
+  ]
+}

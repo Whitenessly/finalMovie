@@ -1,39 +1,25 @@
 import './App.css'
-import React, { useState } from 'react';
-import { Route, Routes } from 'react-router';
-import Loading from './Components/Loading';
-import SignUp from './Components/SignUp';
-import Login from './Components/Login';
+import React from 'react';
+import { Navigate, Route, Routes } from 'react-router';
+import SignUp from './Routes/SignUp';
+import Login from './Routes/Login';
+import Home from './Routes/Home';
 
 function App() {
-  const apiKey = "6855203daa0c8c0805c3bd3d";
-  // const [users, setUsers] = useState([]);
-  React.useEffect(() => {
-    fetch(`https://mindx-mockup-server.vercel.app/api/resources/oke?apiKey=${apiKey}`)
-      // {
-      //   method: "GET",
-      //   headers: {
-      //     "apiKey": "6855203daa0c8c0805c3bd3d"
-      //   }
-      // })
-      .then((res) => {
-        return res.json()
-      })
-      .then((data) => {
-        console.log(data.data.data.users)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }, []);
-  // console.log(users);
+  const [isLogined, setIsLogined] = React.useState({
+    status: false,
+    id: null,
+    username: null,
+    password: null
+  });
 
   return (
     <div>
       <Routes>
-        <Route path='' element={<Loading />} />
+        <Route path='' element={<Navigate to={'/login'} />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
+        <Route path='/home' element={<Home />} />
       </Routes>
     </div>
   )
