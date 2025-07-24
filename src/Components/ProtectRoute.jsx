@@ -1,9 +1,12 @@
 import React from 'react'
+import { Navigate } from "react-router";
+
 
 const ProtectRoute = () => {
-  return (
-    <div>ProtectRoute</div>
-  )
+  const userLocal = localStorage.getItem('userId')
+  if (!userLocal) {
+    return <Navigate to={"/login"} />;
+  }
 }
 
 export default ProtectRoute
