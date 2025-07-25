@@ -21,6 +21,13 @@
       "email": "asdwas@gmail.com",
       "password": "asdasdasd",
       "role": "user"
+    },
+    {
+      "id": "1753448978664",
+      "username": "Ali",
+      "email": "ali@gmail.com",
+      "password": "123123123",
+      "role": "user"
     }
   ],
   "tickets": [
@@ -110,6 +117,21 @@
         21,
         23,
         24
+      ],
+      "canceled": false,
+      "paid": false
+    },
+    {
+      "id": "eadf",
+      "userId": "1",
+      "movieId": 27,
+      "ticketId": 1753449380089,
+      "time": "11:00 AM",
+      "date": "2025-07-27",
+      "seats": [
+        22,
+        36,
+        38
       ],
       "canceled": false,
       "paid": false

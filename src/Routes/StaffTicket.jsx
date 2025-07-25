@@ -6,6 +6,7 @@ import { Cascader } from 'antd';
 
 
 const StaffTicket = () => {
+    const nav = useNavigate()
     const localStaff = localStorage.getItem("staffLogin")
     if (!localStaff) {
         return <Navigate to={"/staff"} />;
