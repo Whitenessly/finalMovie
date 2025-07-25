@@ -4,6 +4,7 @@ import { IoTicketOutline } from "react-icons/io5";
 import { useNavigate } from 'react-router';
 
 const Tickets = () => {
+    localStorage.removeItem("staffLogin")
     const pageStatus = 3
     const nav = useNavigate()
     const user = localStorage.getItem('userId')

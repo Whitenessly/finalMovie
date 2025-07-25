@@ -3,6 +3,7 @@ import { LeftOutlined, VideoCameraOutlined, ClockCircleOutlined, StarOutlined } 
 import { useNavigate, useParams } from 'react-router'
 
 const MovieDetail = () => {
+    localStorage.removeItem("staffLogin")
     const nav = useNavigate()
     const movieId = useParams()
 

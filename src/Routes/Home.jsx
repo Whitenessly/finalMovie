@@ -4,6 +4,7 @@ import List from '../Components/List'
 import { Link } from 'react-router'
 
 const Home = () => {
+  localStorage.removeItem("staffLogin")
   const pageStatus = 1
   const [movies, setMovies] = React.useState([]);
   React.useEffect(() => {

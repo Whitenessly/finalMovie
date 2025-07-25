@@ -5,6 +5,11 @@ import { LeftOutlined } from '@ant-design/icons'
 
 
 const SignUp = () => {
+    localStorage.removeItem("staffLogin")
+    const userLocal = localStorage.getItem('userId')
+    if (userLocal) {
+        return <Navigate to={"/home"} />;
+    }
     const nav = useNavigate();
 
     const [usernameValue, setUsernameValue] = React.useState();
@@ -68,6 +73,7 @@ const SignUp = () => {
             username: `${usernameValue}`,
             email: `${emailValue}`,
             password: `${passwordValue}`,
+            role: "user"
         }
 
         await fetch("http://localhost:4000/users", {

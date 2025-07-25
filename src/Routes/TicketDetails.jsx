@@ -4,6 +4,11 @@ import { useParams } from 'react-router'
 
 
 const TicketDetails = () => {
+    localStorage.removeItem("staffLogin")
+    // const userLocal = localStorage.getItem('userId')
+    // if (!userLocal) {
+    //     return <Navigate to={"/home"} />;
+    // }
     const ticketParam = useParams()
     // console.log(ticket)
 

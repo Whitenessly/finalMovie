@@ -1,10 +1,15 @@
 import React from 'react'
 import Logo from '../assets/Logo.svg'
-import { Link, useNavigate } from 'react-router'
+import { Link, Navigate, useNavigate } from 'react-router'
 import { LeftOutlined } from '@ant-design/icons'
 
 
 const Login = () => {
+    localStorage.removeItem("staffLogin")
+    const userLocal = localStorage.getItem('userId')
+    if (userLocal) {
+        return <Navigate to={"/home"} />;
+    }
     const nav = useNavigate();
 
     const [users, setUsers] = React.useState([]);
@@ -43,7 +48,7 @@ const Login = () => {
         }
     }
     const onClickReturn = () => {
-        history.back()
+        nav('/home');
     }
 
     return (

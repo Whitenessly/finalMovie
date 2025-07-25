@@ -4,19 +4,23 @@
       "id": "1",
       "username": "Wsly",
       "email": "whitenessly@gmail.com",
-      "password": "23212332"
+      "password": "23212332",
+      "role": "staff",
+      "staffPass": "123123123"
     },
     {
       "id": "2",
       "username": "Alice",
       "email": "alice@gmail.com",
-      "password": "123123123"
+      "password": "123123123",
+      "role": "user"
     },
     {
       "id": "1753392424693",
       "username": "asd",
       "email": "asdwas@gmail.com",
-      "password": "asdasdasd"
+      "password": "asdasdasd",
+      "role": "user"
     }
   ],
   "tickets": [

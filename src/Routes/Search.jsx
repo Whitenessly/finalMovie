@@ -7,6 +7,7 @@ import List from '../Components/List';
 
 
 const Search = () => {
+  localStorage.removeItem("staffLogin")
   const pageStatus = 2
   const [searchParams, setSearchParams] = useSearchParams()
 

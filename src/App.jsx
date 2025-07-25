@@ -13,6 +13,8 @@ import TicketDetails from './Routes/TicketDetails';
 import User from './Routes/User'
 import ProtectRoute from './Components/ProtectRoute';
 import NotFound from './Routes/NotFound';
+import Staff from './Routes/Staff';
+import StaffTicket from './Routes/StaffTicket';
 
 function App() {
 
@@ -38,6 +40,8 @@ function App() {
           </ProtectRoute>
         } />
         <Route path='/user' element={<User />} />
+        <Route path='/staff' element={<Staff />} />
+        <Route path='/staff/ticket' element={<StaffTicket />} />
 
         <Route path='*' element={<NotFound />} />
       </Routes>

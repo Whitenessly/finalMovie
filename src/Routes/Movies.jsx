@@ -4,6 +4,7 @@ import { LeftOutlined } from '@ant-design/icons'
 
 
 const Movies = () => {
+  localStorage.removeItem("staffLogin")
   const [movies, setMovies] = React.useState([]);
 
   React.useEffect(() => {

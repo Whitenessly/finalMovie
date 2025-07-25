@@ -6,6 +6,11 @@ import { Cascader } from 'antd';
 import { useNavigate, useParams } from 'react-router';
 
 const Booking = () => {
+    localStorage.removeItem("staffLogin")
+    // const userLocal = localStorage.getItem('userId')
+    // if (!userLocal) {
+    //     return <Navigate to={"/home"} />;
+    // }
     const nav = useNavigate()
     const movieParam = useParams()
     const onClickReturn = () => {
