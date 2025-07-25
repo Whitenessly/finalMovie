@@ -23,7 +23,6 @@ const List = (props) => {
                 </div>
             )
         }
-        // console.log(filtered)
     } else {
         return props.movies.map((movie) => {
             return <Item movie={movie} />

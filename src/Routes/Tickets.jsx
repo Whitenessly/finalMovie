@@ -28,6 +28,7 @@ const Tickets = () => {
                 setTickets(data.filter((ticket) => ticket.userId === user));
             })
             .catch(error => {
+                location.reload();
                 console.error('Error fetching movies:', error);
             });
     }
@@ -71,7 +72,7 @@ const Tickets = () => {
                             const onClickOpenModalCancel = () => {
                                 setCancelModal(cancelInfo)
                             }
-                            const onClickDetails = () =>{
+                            const onClickDetails = () => {
                                 nav(`/tickets/${ticket.id}`)
                             }
                             return (
@@ -90,7 +91,11 @@ const Tickets = () => {
                                             <div className='w-full py-2 rounded-lg bg-gray-300 text-gray-600 flex justify-center items-center'>Canceled</div>
                                             :
                                             <div className='flex flex-row justify-between'>
-                                                <div onClick={onClickOpenModalCancel} className='border-2 border-red-500 text-red-500 rounded-lg py-2 px-12'>Cancel</div>
+                                                {(new Date(ticket.date) < Date.now()) ?
+                                                    <div className='bg-gray-300 text-gray-600 rounded-lg py-2 p-9'>Out of date</div>
+                                                    :
+                                                    <div onClick={onClickOpenModalCancel} className='border-2 border-red-500 text-red-500 rounded-lg py-2 px-12'>Cancel</div>
+                                                }
                                                 <div onClick={onClickDetails} className='bg-orange-600 text-white rounded-lg py-2 px-12'>Details</div>
                                             </div>
                                         }

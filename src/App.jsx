@@ -1,7 +1,6 @@
 import './App.css'
 import React from 'react';
 import { Navigate, Route, Routes, useNavigate } from 'react-router';
-import Logo from '../public/Logo.svg'
 import SignUp from './Routes/SignUp';
 import Login from './Routes/Login';
 import Home from './Routes/Home';
@@ -13,6 +12,7 @@ import Tickets from './Routes/Tickets'
 import TicketDetails from './Routes/TicketDetails';
 import User from './Routes/User'
 import ProtectRoute from './Components/ProtectRoute';
+import NotFound from './Routes/NotFound';
 
 function App() {
 
@@ -38,6 +38,8 @@ function App() {
           </ProtectRoute>
         } />
         <Route path='/user' element={<User />} />
+
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
   )
