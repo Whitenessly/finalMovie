@@ -80,6 +80,39 @@
       ],
       "canceled": false,
       "paid": false
+    },
+    {
+      "id": "0fca",
+      "userId": "2",
+      "movieId": 41,
+      "ticketId": 1753440231761,
+      "time": "11:00 AM",
+      "date": "2025-07-27",
+      "seats": [
+        1,
+        11,
+        19,
+        29,
+        39,
+        45
+      ],
+      "canceled": true,
+      "paid": false
+    },
+    {
+      "id": "d3c4",
+      "userId": "2",
+      "movieId": 27,
+      "ticketId": 1753440402435,
+      "time": "11:00 AM",
+      "date": "2025-07-27",
+      "seats": [
+        21,
+        23,
+        24
+      ],
+      "canceled": false,
+      "paid": false
     }
   ],
   "movies": [

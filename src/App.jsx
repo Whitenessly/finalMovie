@@ -29,15 +29,15 @@ function App() {
         <Route path='/movie' element={<Movies />} />
         <Route path='/movie/:id' element={<MovieDetail />} />
         <Route path='/booking/:id' element={
-          <ProtectRoute>
+          // <ProtectRoute>
             <Booking />
-          </ProtectRoute>
+          // </ProtectRoute>
         } />
         <Route path='/tickets' element={<Tickets />} />
         <Route path='/tickets/:id' element={
-          <ProtectRoute>
+          // <ProtectRoute>
             <TicketDetails />
-          </ProtectRoute>
+          // </ProtectRoute>
         } />
         <Route path='/user' element={<User />} />
         <Route path='/staff' element={<Staff />} />

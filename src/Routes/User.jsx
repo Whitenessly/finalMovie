@@ -36,7 +36,7 @@ const User = () => {
             {(userLocal) ?
                 <div className='p-7 flex flex-col gap-5'>
                     <p className='text-2xl font-semibold'>Hello, {user.username}</p>
-                    <Link to='/staff'><div className='w-full flex flex-row justify-center items-center gap-3 text-2xl text-white bg-blue-400 py-3 rounded-lg'>Staff Mode <FaArrowRight /></div></Link>
+                    {(user.role === 'staff') ? <Link to='/staff'><div className='w-full flex flex-row justify-center items-center gap-3 text-2xl text-white bg-blue-400 py-3 rounded-lg'>Staff Mode <FaArrowRight /></div></Link> : null}
                     <div onClick={onClickLogout} className='w-full flex flex-row justify-center items-center gap-3 text-2xl text-white bg-orange-600 py-3 rounded-lg'><MdLogout /> Logout</div>
                 </div>
                 :
