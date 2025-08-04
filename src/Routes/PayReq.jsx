@@ -79,7 +79,7 @@ const PayReq = () => {
                                 <div className='flex flex-col text-lg '>
                                     <div>Ticket: {item.id}</div>
                                     <div>Total: ${item.price}</div>
-                                    <Link><div className='bg-purple-600 text-center py-1 px-2 font-medium rounded-lg border-b-2 border-r-2 border-gray-300'>Detail</div></Link>
+                                    <Link to={`/staff/ticket/${item.id}`}><div className='bg-purple-600 text-center py-1 px-2 font-medium rounded-lg border-b-2 border-r-2 border-gray-300'>Detail</div></Link>
                                 </div>
                                 <div className='flex flex-row gap-3 items-center text-4xl'>
                                     <div onClick={cancelPayment}><MdCancelPresentation /></div>

@@ -3,6 +3,10 @@
     {
       "id": "102e",
       "price": "149.94"
+    },
+    {
+      "id": "7659",
+      "price": "199.92"
     }
   ],
   "users": [
@@ -33,6 +37,13 @@
       "id": "1753448978664",
       "username": "Ali",
       "email": "ali@gmail.com",
+      "password": "123123123",
+      "role": "user"
+    },
+    {
+      "id": "1754307151863",
+      "username": "bei",
+      "email": "bei@gmail.com",
       "password": "123123123",
       "role": "user"
     }
@@ -211,6 +222,38 @@
       "date": "2025-08-21",
       "seats": [
         44
+      ],
+      "canceled": false,
+      "paid": false
+    },
+    {
+      "id": "003c",
+      "userId": "1754307151863",
+      "movieId": 40,
+      "ticketId": 1754307210313,
+      "time": "11:00 AM",
+      "date": "2025-08-15",
+      "seats": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "canceled": true,
+      "paid": false
+    },
+    {
+      "id": "7659",
+      "userId": "1754307151863",
+      "movieId": 45,
+      "ticketId": 1754307249336,
+      "time": "11:00 AM",
+      "date": "2025-08-22",
+      "seats": [
+        14,
+        21,
+        37,
+        38
       ],
       "canceled": false,
       "paid": false
