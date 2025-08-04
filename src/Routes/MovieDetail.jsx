@@ -13,9 +13,7 @@ const MovieDetail = () => {
         fetch(`http://localhost:4000/movies/${movieId.id}`)
             .then(response => response.json())
             .then(data => {
-                // data = data.find((movie) => movie.id === movieId.id);
                 setMovie(data);
-                // console.log(data);
             })
             .catch(error => {
                 console.error('Error fetching movies:', error);
@@ -31,9 +29,9 @@ const MovieDetail = () => {
 
     return (
         <>
-            {(movie) ? <div className='w-full h-full'>
-                <div className='w-full py-3 px-5 border-b-2 border-gray-200 font-bold text-center relative'>
-                    <p onClick={onClickReturn} className='absolute left-3'><LeftOutlined /></p>
+            {(movie) ? <div className='w-full h-screen'>
+                <div className='w-full py-4 px-5 text-lg font-bold text-center relative'>
+                    <p onClick={onClickReturn} className='absolute left-3 top-2 border-b-2 border-r-2 border-gray-200 bg-gray-400/50 rounded-full px-3 py-2'><LeftOutlined /></p>
                     <p>Movie Details</p>
                 </div>
                 <div className='p-5 flex flex-row justify-between'>
@@ -41,18 +39,20 @@ const MovieDetail = () => {
                         {(movie) ? <img src={movie.image} alt={movie.title} className='w-full object-cover rounded-xl' /> : <div>No image</div>}
                     </div>
                     <div className='w-[30%] flex flex-col justify-between'>
-                        <div className='flex flex-col bg-gray-100 text-center p-1 rounded-lg'>
-                            <span className='text-orange-600 text-xl'><VideoCameraOutlined /></span>
-                            <p className='text-gray-500'>Type</p>
-                            <p className='font-bold'>{movie.genres}</p>
+                        <div className='flex flex-col bg-purple-700 text-center p-1 rounded-lg'>
+                            <div className='flex flex-row gap-2 justify-center'>
+                                <p className=''>Type</p>
+                                <span className='text-pink-400 text-xl'><VideoCameraOutlined /></span>
+                            </div>
+                            <p className='font-bold text-sm'>{movie.genres}</p>
                         </div>
-                        <div className='flex flex-col bg-gray-100 text-center p-1 rounded-lg'>
-                            <span className='text-orange-600 text-xl'><ClockCircleOutlined /></span>
-                            <p className='text-gray-500'>Duration</p>
+                        <div className='flex flex-col bg-purple-700 text-center p-1 rounded-lg'>
+                            <span className='text-pink-400 text-xl'><ClockCircleOutlined /></span>
+                            <p className=''>Duration</p>
                             <p className='font-bold'>{movie.duration}m</p>
-                        </div><div className='flex flex-col bg-gray-100 text-center p-1 rounded-lg'>
-                            <span className='text-orange-600 text-xl'><StarOutlined /></span>
-                            <p className='text-gray-500'>Rating</p>
+                        </div><div className='flex flex-col bg-purple-700 text-center p-1 rounded-lg'>
+                            <span className='text-pink-400 text-xl'><StarOutlined /></span>
+                            <p className=''>Rating</p>
                             <p className='font-bold'>{movie.rating}/10</p>
                         </div>
                     </div>
@@ -64,7 +64,7 @@ const MovieDetail = () => {
                         <p>{movie.description}</p>
                     </div>
                 </div>
-                <div onClick={onClickBook} className='bg-orange-600 text-lg font-semibold text-white m-6 flex justify-center items-center h-[60px] rounded-xl'>Select Seat</div>
+                <div onClick={onClickBook} className='border-b-2 border-r-2 border-gray-200 bg-pink-500 text-lg font-semibold text-white m-6 flex justify-center items-center h-[60px] rounded-xl'>Select Seat</div>
             </div> : null}
         </>
 

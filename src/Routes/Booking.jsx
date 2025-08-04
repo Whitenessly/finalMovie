@@ -1,16 +1,17 @@
 import React from 'react'
 import { MdChair } from "react-icons/md";
-import { LeftOutlined, CheckCircleOutlined } from '@ant-design/icons'
+import { LeftOutlined } from '@ant-design/icons'
 import { DatePicker, Space } from 'antd';
 import { Cascader } from 'antd';
-import { useNavigate, useParams } from 'react-router';
+import { useNavigate, useParams, Navigate } from 'react-router';
+import Screen from '../../public/Screen.svg'
 
 const Booking = () => {
     localStorage.removeItem("staffLogin")
-    // const userLocal = localStorage.getItem('userId')
-    // if (!userLocal) {
-    //     return <Navigate to={"/home"} />;
-    // }
+    const userLocal = localStorage.getItem('userId')
+    if (!userLocal) {
+        return <Navigate to={"/login"} />;
+    }
     const nav = useNavigate()
     const movieParam = useParams()
     const onClickReturn = () => {
@@ -77,10 +78,12 @@ const Booking = () => {
     const [time, setTime] = React.useState('')
     const onChangeTime = (value) => {
         setTime(value)
+        setSeats(new Array(56).fill(999))
     };
     const [date, setDate] = React.useState('')
     const onChangeDate = (date, dateString) => {
         setDate(dateString)
+        setSeats(new Array(56).fill(999))
     };
 
     const [tickets, setTickets] = React.useState([]);
@@ -134,13 +137,15 @@ const Booking = () => {
 
     return (
         <>
-            <div className='w-full h-full'>
-                <div className='w-full py-3 px-5 border-b-2 border-gray-200 font-bold text-center relative'>
-                    <p onClick={onClickReturn} className='absolute left-3'><LeftOutlined /></p>
+            <div className='w-full h-screen flex flex-col justify-between'>
+                <div className='w-full py-4 px-5 text-lg font-bold text-center relative'>
+                    <p onClick={onClickReturn} className='absolute left-3 top-2 border-b-2 border-r-2 border-gray-200 bg-gray-400/50 rounded-full px-3 py-2'><LeftOutlined /></p>
                     <p>Booking</p>
                 </div>
-                <div className='px-5 py-4 flex flex-col gap-19'>
-                    <div className='w-full h-[70px] flex justify-center items-center text-orange-600 border-2 border-orange-600 text-xl'>Screen</div>
+                <div className='px-5 py-4 flex flex-col gap-12'>
+                    <div className='w-full'>
+                        <img src={Screen} alt="" />
+                    </div>
                     <div className='w-full grid grid-cols-8 gap-2 text-4xl'>
                         {seats.map((seat) => {
                             const onClickSeat = () => {
@@ -149,19 +154,19 @@ const Booking = () => {
                             if (date && time[0]) {
                                 if (seat.status === 0) {
                                     return (
-                                        <div onClick={onClickSeat} className='text-gray-300'>
+                                        <div onClick={onClickSeat} className='text-gray-400'>
                                             <MdChair />
                                         </div>
                                     )
                                 } else if (seat.status === 1) {
                                     return (
-                                        <div onClick={onClickSeat} className='text-orange-600'>
+                                        <div onClick={onClickSeat} className='text-teal-400'>
                                             <MdChair />
                                         </div>
                                     )
                                 } else if (seat.status === -1) {
                                     return (
-                                        <div className='text-black'>
+                                        <div className='text-pink-600'>
                                             <MdChair />
                                         </div>
                                     )
@@ -169,19 +174,20 @@ const Booking = () => {
                             } else {
                                 if (seat.status === 0) {
                                     return (
-                                        <div className='text-gray-300'>
+                                        <div className='text-gray-400'>
                                             <MdChair />
                                         </div>
                                     )
-                                } else if (seat.status === 1) {
+                                } 
+                                else if (seat.status === 1) {
                                     return (
-                                        <div className='text-orange-600'>
+                                        <div className='text-teal-400'>
                                             <MdChair />
                                         </div>
                                     )
                                 } else if (seat.status === -1) {
                                     return (
-                                        <div className='text-black'>
+                                        <div className='text-pink-600'>
                                             <MdChair />
                                         </div>
                                     )
@@ -190,12 +196,12 @@ const Booking = () => {
                         })}
                     </div>
                     <div className='flex flex-row justify-between text-lg'>
-                        <div className='flex flex-row items-center gap-1'><span className='text-orange-600 text-2xl'><MdChair /></span>Selected</div>
-                        <div className='flex flex-row items-center gap-1'><span className='text-2xl'><MdChair /></span>Booked</div>
-                        <div className='flex flex-row items-center gap-1'><span className='text-gray-300 text-2xl'><MdChair /></span>Available</div>
+                        <div className='flex flex-row items-center gap-1'><span className='text-teal-400 text-2xl'><MdChair /></span>Selected</div>
+                        <div className='flex flex-row items-center gap-1'><span className='text-pink-600 text-2xl'><MdChair /></span>Booked</div>
+                        <div className='flex flex-row items-center gap-1'><span className='text-gray-400 text-2xl'><MdChair /></span>Available</div>
                     </div>
                 </div>
-                <div className='w-full h-[210px] bg-gray-200 py-5 rounded-3xl flex flex-col justify-between'>
+                <div className='w-full py-5 rounded-3xl flex flex-col gap-7' style={{ background: 'linear-gradient(91deg,rgba(166, 16, 235, 1) 24%, rgba(224, 60, 230, 1) 94%)' }}>
                     <div className='font-bold text-xl w-full text-center'>Select date and time</div>
                     <div className='flex flex-row px-5 justify-between'>
                         <Cascader options={options} onChange={onChangeTime} placeholder="Select time" />
@@ -206,9 +212,9 @@ const Booking = () => {
                     <div className='flex flex-row justify-between px-6'>
                         <div className='flex flex-col'>
                             <p>Total price</p>
-                            <p className='font-bold text-xl'>${(selected.length) * 49.98}</p>
+                            <p className='font-bold text-xl'>${((selected.length) * 4998/100)}</p>
                         </div>
-                        <button onClick={onSubmit} className='bg-orange-600 text-white flex items-center justify-center px-5 rounded-xl'>Confirm Seat</button>
+                        <button onClick={onSubmit} className='border-b-2 border-r-2 border-gray-200 bg-pink-500 flex items-center justify-center px-5 rounded-xl'>Confirm Seat</button>
                     </div>
                 </div>
             </div>

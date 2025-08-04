@@ -23,6 +23,10 @@ const List = (props) => {
                 </div>
             )
         }
+    } else if (props.rating) {
+        return props.movies.map((movie) => {
+            return <Item movie={movie} />
+        })
     } else {
         return props.movies.map((movie) => {
             return <Item movie={movie} />

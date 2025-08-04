@@ -1,4 +1,10 @@
 {
+  "payReq": [
+    {
+      "id": "102e",
+      "price": "149.94"
+    }
+  ],
   "users": [
     {
       "id": "1",
@@ -13,7 +19,8 @@
       "username": "Alice",
       "email": "alice@gmail.com",
       "password": "123123123",
-      "role": "user"
+      "role": "staff",
+      "staffPass": "123123123"
     },
     {
       "id": "1753392424693",
@@ -132,6 +139,78 @@
         22,
         36,
         38
+      ],
+      "canceled": false,
+      "paid": false
+    },
+    {
+      "id": "10e7",
+      "userId": "1",
+      "movieId": 27,
+      "ticketId": 1753976698718,
+      "time": "2:00 PM",
+      "date": "2025-08-01",
+      "seats": [
+        27,
+        37,
+        38
+      ],
+      "canceled": true,
+      "paid": false
+    },
+    {
+      "id": "3695",
+      "userId": "1",
+      "movieId": 47,
+      "ticketId": 1754038650051,
+      "time": "11:00 AM",
+      "date": "2025-08-09",
+      "seats": [
+        37,
+        38,
+        39
+      ],
+      "canceled": true,
+      "paid": false
+    },
+    {
+      "id": "102e",
+      "userId": "1",
+      "movieId": 18,
+      "ticketId": 1754038877934,
+      "time": "11:00 AM",
+      "date": "2025-08-09",
+      "seats": [
+        35,
+        36,
+        37
+      ],
+      "canceled": false,
+      "paid": false
+    },
+    {
+      "id": "aa7f",
+      "userId": "2",
+      "movieId": 44,
+      "ticketId": 1754042535084,
+      "time": "11:00 AM",
+      "date": "2025-08-09",
+      "seats": [
+        36,
+        37
+      ],
+      "canceled": false,
+      "paid": true
+    },
+    {
+      "id": "73bc",
+      "userId": "2",
+      "movieId": 47,
+      "ticketId": 1754300379952,
+      "time": "5:00 PM",
+      "date": "2025-08-21",
+      "seats": [
+        44
       ],
       "canceled": false,
       "paid": false

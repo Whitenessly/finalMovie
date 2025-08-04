@@ -1,15 +1,17 @@
 import React from 'react'
-import { HomeOutlined, SearchOutlined, UserOutlined } from '@ant-design/icons';
-import { HiOutlineTicket } from "react-icons/hi2";
+import { FaCircleUser } from "react-icons/fa6";
+import { IoHome } from "react-icons/io5";
+import { FaTicketAlt } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { Link } from 'react-router';
 
 const NavBar = (props) => {
   return (
-    <div className='w-full h-88px fixed z-10 bottom-0 bg-white flex flex-row items-center justify-around text-gray-500 text-2xl py-3 border-t-2 border-gray-200'>
-      <Link to="/home">{(props.pageStatus === 1) ? <div className='bg-orange-600 rounded-xl px-2 py-1 gap-1 text-white flex flex-row items-center'><HomeOutlined />Home</div> : <HomeOutlined />}</Link>
-      <Link to="/search">{(props.pageStatus === 2) ? <div className='bg-orange-600 rounded-xl px-2 py-1 gap-1 text-white flex flex-row items-center'><SearchOutlined />Search</div> : <SearchOutlined />}</Link>
-      <Link to="/tickets">{(props.pageStatus === 3) ? <div className='bg-orange-600 rounded-xl px-2 py-1 gap-1 text-white flex flex-row items-center'><HiOutlineTicket />Tickets</div> : <HiOutlineTicket />}</Link>
-      <Link to='/user'>{(props.pageStatus === 4) ? <div className='bg-orange-600 rounded-xl px-2 py-1 gap-1 text-white flex flex-row items-center'><UserOutlined />User</div> : <UserOutlined />}</Link>
+    <div className='w-full fixed z-10 bottom-0 flex flex-row items-center justify-around font-bold text-2xl pt-2 pb-4' style={{ background: 'linear-gradient(91deg,rgba(166, 16, 235, 1) 24%, rgba(224, 60, 230, 1) 94%)' }}>
+      <Link to="/home">{(props.pageStatus === 1) ? <div className='border-b-2 border-r-2 border-gray-200 bg-pink-500 rounded-full px-3 py-3 gap-1 text-white flex flex-row items-center'><IoHome /></div> : <IoHome />}</Link>
+      <Link to="/search">{(props.pageStatus === 2) ? <div className='border-b-2 border-r-2 border-gray-200 bg-pink-500 rounded-full px-3 py-3 gap-1 text-white flex flex-row items-center'><FaSearch /></div> : <FaSearch />}</Link>
+      <Link to="/tickets">{(props.pageStatus === 3) ? <div className='border-b-2 border-r-2 border-gray-200 bg-pink-500 rounded-full px-3 py-3 gap-1 text-white flex flex-row items-center'><FaTicketAlt /></div> : <FaTicketAlt />}</Link>
+      <Link to='/user'>{(props.pageStatus === 4) ? <div className='border-b-2 border-r-2 border-gray-200 bg-pink-500 rounded-full px-3 py-3 gap-1 text-white flex flex-row items-center'><FaCircleUser /></div> : <FaCircleUser />}</Link>
     </div>
   )
 }

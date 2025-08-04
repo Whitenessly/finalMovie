@@ -48,31 +48,28 @@ const Search = () => {
 
   return (
     <>
-      <div>
-        <div className='p-7'>
-          <div className='flex flex-row justify-between gap-2 pb-5'>
-            <div className='bg-gray-200 py-2 pl-3 w-full rounded-lg'><SearchOutlined /> <input onChange={onChangeInput} type="text" placeholder='wut u want 2 search 4 ?' /></div>
-            <div onClick={onSearch} className='bg-orange-600 text-white px-3 py-2 rounded-lg'>Search</div>
-          </div>
-          {(searchParams.get('key')) ?
-            <div className='w-full flex flex-row flex-wrap justify-between gap-5 '>
-              <List movies={movies} searchItems={searchParams.get('key')}/>
-            </div>
-            :
-            <div className=''>
-              <div onClick={onSearchRecommend_1} className='py-2 text-gray-500 flex flex-row items-center gap-2'><MdArrowOutward /> comedy</div>
-              <hr />
-              <div onClick={onSearchRecommend_2} className='py-2 text-gray-500 flex flex-row items-center gap-2'><MdArrowOutward /> romance</div>
-              <hr />
-              <div onClick={onSearchRecommend_3} className='py-2 text-gray-500 flex flex-row items-center gap-2'><MdArrowOutward /> science fiction</div>
-              <hr />
-              <div onClick={onSearchRecommend_4} className='py-2 text-gray-500 flex flex-row items-center gap-2'><MdArrowOutward /> action</div>
-            </div>}
+      <div className='w-screen min-h-screen p-7'>
+        <div className='flex flex-row justify-between gap-2 pb-5'>
+          <div className='py-2 pl-3 w-full rounded-lg border-2 border-white'><SearchOutlined /> <input onChange={onChangeInput} type="text" placeholder='wut u want 2 search 4 ?' /></div>
+          <div onClick={onSearch} className='border-b-2 border-r-2 border-gray-200 bg-pink-500 px-3 py-2 rounded-lg'>Search</div>
         </div>
+        {(searchParams.get('key')) ?
+          <div className='w-full flex flex-row flex-wrap justify-between gap-5 '>
+            <List movies={movies} searchItems={searchParams.get('key')} />
+          </div>
+          :
+          <div className='text-xl flex flex-col gap-1'>
+            <div onClick={onSearchRecommend_1} className='py-2 flex flex-row items-center gap-2'><MdArrowOutward /> comedy</div>
+            <hr />
+            <div onClick={onSearchRecommend_2} className='py-2 flex flex-row items-center gap-2'><MdArrowOutward /> romance</div>
+            <hr />
+            <div onClick={onSearchRecommend_3} className='py-2 flex flex-row items-center gap-2'><MdArrowOutward /> science fiction</div>
+            <hr />
+            <div onClick={onSearchRecommend_4} className='py-2 flex flex-row items-center gap-2'><MdArrowOutward /> action</div>
+          </div>}
       </div>
-      <div>
-        <NavBar pageStatus={pageStatus} />
-      </div>
+
+      <NavBar pageStatus={pageStatus} />
     </>
   )
 }
