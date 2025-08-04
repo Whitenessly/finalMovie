@@ -13,7 +13,7 @@ const Scanner = () => {
     useEffect(() => {
         const html5qrCodeScanner = new Html5QrcodeScanner(
             "reader",
-            { fps: 10, qrbox: { width: 250, height: 250 } },
+            { fps: 10, qrbox: { width: 200, height: 200 } },
             false
         );
         const onScanSuccess = (decodedText, decodedResult) => {

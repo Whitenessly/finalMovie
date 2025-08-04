@@ -94,9 +94,11 @@ const TicketDetails = () => {
                     </div>
                     <div className='w-full fixed -z-10 top-0 p-6 pt-18'>
                         <div className='border-2 border-gray-200 w-full h-full shadow-2xl rounded-2xl p-6 flex flex-col gap-10'>
-                            <Space direction="vertical" align="center">
-                                <QRCode value={text || '-'} size={230} color={'#ffffff'} />
-                            </Space>
+                            <div className='bg-white p-2 rounded-xl '>
+                                <Space direction="vertical" align="center">
+                                    <QRCode value={text || '-'} size={275} color={'#BA19BD'} />
+                                </Space>
+                            </div>
                             <div className='flex flex-row justify-between'>
                                 <div>
                                     <p className='text-xl font-bold'>Name</p>
