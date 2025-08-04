@@ -3,10 +3,6 @@
     {
       "id": "102e",
       "price": "149.94"
-    },
-    {
-      "id": "7659",
-      "price": "199.92"
     }
   ],
   "users": [
@@ -45,7 +41,8 @@
       "username": "bei",
       "email": "bei@gmail.com",
       "password": "123123123",
-      "role": "user"
+      "role": "staff",
+      "staffPass": "123123123"
     }
   ],
   "tickets": [
@@ -256,7 +253,7 @@
         38
       ],
       "canceled": false,
-      "paid": false
+      "paid": true
     }
   ],
   "movies": [

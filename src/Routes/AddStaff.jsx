@@ -108,7 +108,7 @@ const AddStaff = () => {
                 <div className='w-screen h-screen bg-black/70 fixed top-0 z-10 flex justify-center items-center'>
                     <div className='bg-purple-900 p-5 text-lg rounded-xl flex flex-col gap-4 items-center'>
                         <div className='flex flex-row justify-between w-full'>
-                            <div className='text-xl font-semibold'>Enter staff password</div>
+                            <div className='text-xl font-semibold'>Create staff password</div>
                             <p onClick={onClickCloseAdd} className='text-3xl'><IoCloseSharp /></p>
                         </div>
                         <input onChange={onChangePassword} type="password" className='text-lg border-[#A9A2A333] border-2 w-full px-5 py-3 rounded-lg focus:border-pink-400 ' placeholder='Password' />
